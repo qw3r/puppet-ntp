@@ -1,0 +1,33 @@
+# Class: ntp
+#   This module manages ntp
+#
+# Definition:
+#   ntp::server
+#
+# Parameters:
+#   $config - specify template file
+#   $local  - specify local ntp servers
+#   $remote - specify remote ntp servers
+#
+# Actions:
+#   Installs the ntp.conf
+#
+# Requires:
+#   Square Brackets, otherwise the conditionals at the
+#   template will throw an error
+#
+# Sample Usage:
+#   ntp::server { "/etc/ntp.conf":
+#      config => "client",
+#      local  => [
+#         "ntp1.${::domain}",
+#         "ntp2.${::domain}",
+#         "ntp3.${::domain}"
+#      ],
+#      remote => [
+#         "0.pool.ntp.org",
+#         "1.pool.ntp.org",
+#         "2.pool.ntp.org",
+#         "3.pool.ntp.org"
+#      ],
+#   }
