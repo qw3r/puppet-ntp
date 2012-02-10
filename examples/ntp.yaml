@@ -1,8 +1,8 @@
 ---
 local:
-   - 'ntp1.debian-solutions.de'
-   - 'ntp2.debian-solutions.de'
-   - 'ntp3.debian-solutions.de'
+   - 'ntp1.%{domain}'
+   - 'ntp2.%{domain}'
+   - 'ntp3.%{domain}'
 remote:
    - '0.pool.ntp.org'
    - '1.pool.ntp.org'
