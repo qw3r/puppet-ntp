@@ -13,17 +13,8 @@ class ntp {
 
 	ntp::server { "/etc/ntp.conf":
 		config => "client",
-		local  => [
-			"ntp1.${::domain}",
-			"ntp2.${::domain}",
-			"ntp3.${::domain}"
-		],
-		remote => [
-			"0.pool.ntp.org",
-			"1.pool.ntp.org",
-			"2.pool.ntp.org",
-			"3.pool.ntp.org"
-		],
+		local  => hiera_array('local'),
+		remote => hiera_array('remote'),
 	}
 
 	package { "ntp":
