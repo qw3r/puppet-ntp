@@ -3,5 +3,3 @@ class ntp::master inherits ntp {
 		config => "server",
 	}
 }
-
-# vim: tabstop=3

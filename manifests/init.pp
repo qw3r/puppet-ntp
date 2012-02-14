@@ -5,7 +5,7 @@ class ntp {
 			group   => root,
 			mode    => 0644,
 			alias   => "ntp",
-			content => template("ntp/common/etc/ntp-${config}.conf.erb"),
+			content => template("ntp/etc/ntp-${config}.conf.erb"),
 			notify  => Service["ntp"],
 			require => Package["ntp"],
 		}
@@ -33,4 +33,3 @@ class ntp {
 	}
 }
 
-# vim: tabstop=3
